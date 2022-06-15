@@ -1,2 +1,2 @@
-# circleci-dem
-circleci-dem
+# circleci-demo
+circleci-demo
