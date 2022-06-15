@@ -29,16 +29,16 @@ workflows:
     nightly:
       triggers:
         - schedule:
-            cron: "51 20 * * *"
+            cron: "52 20 * * *"
             filters:
               branches:
                 only:
                   - main
-      jobs:
-        - build
-        - test:
-            requires:
-              - build
-        - test1:
-            requires:
-              - build
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+      - test1:
+          requires:
+            - build
