@@ -24,6 +24,7 @@ jobs:
       - run: python3 main-test1.py
 
 workflows:
+  version: 2
   build_and_test:
       triggers:
         - schedule:
@@ -32,11 +33,11 @@ workflows:
               branches:
                 only:
                   - main
-    jobs:
-      - build
-      - test:
-          requires:
-            - build
-      - test1:
-          requires:
-            - build
+      jobs:
+        - build
+        - test:
+            requires:
+              - build
+        - test1:
+            requires:
+              - build

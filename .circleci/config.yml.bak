@@ -25,7 +25,6 @@ jobs:
 
 workflows:
   build_and_test:
-    nigthly:
       triggers:
         - schedule:
             cron: "25 * * * *"
@@ -33,11 +32,11 @@ workflows:
               branches:
                 only:
                   - main
-      jobs:
-        - build
-        - test:
-            requires:
-              - build
-        - test1:
-            requires:
-              - build
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+      - test1:
+          requires:
+            - build
