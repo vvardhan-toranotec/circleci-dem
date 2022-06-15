@@ -33,11 +33,11 @@ workflows:
               branches:
                 only:
                   - main
-      jobs:
-        - build
-        - test:
-            requires:
-              - build
-        - test1:
-            requires:
-              - build
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+      - test1:
+          requires:
+            - build
